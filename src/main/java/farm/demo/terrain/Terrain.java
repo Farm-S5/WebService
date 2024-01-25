@@ -138,14 +138,14 @@ public class Terrain {
         return lt;
     }
 
-    public Terrain getDimension(Terrain t) {
+    public Terrain getDimension(int t) {
         Terrain u = new Terrain();
         try {
             Connect c = new Connect("Farmer", "123");
             Connection con = c.conekta();
             String sql = "Select longitude,latitude from terrain where idTerrain =?";
             PreparedStatement psd = con.prepareStatement(sql);
-            psd.setInt(1, t.getIdTerrain());
+            psd.setInt(1, t);
             ResultSet rs = psd.executeQuery();
             while (rs.next()) {
                 u.setLongitude(rs.getFloat(1));

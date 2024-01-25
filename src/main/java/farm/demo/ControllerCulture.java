@@ -7,14 +7,9 @@ import java.util.*;
 public class ControllerCulture
 {
     private final Culture culture;
-    private final CultureParcelle cultureparcelle;
 
     public ControllerCulture(){
         this.culture=new Culture();
-    }
-
-    public ControllerCulture(){
-        this.cultureparcelle=new CultureParcelle();
     }
 
     // {
@@ -51,21 +46,4 @@ public class ControllerCulture
         }
     }
 
-    @PostMapping("/insertCultureParcelle")
-    public void insertCultureParcelle(@RequestBody CultureParcelle cp){
-        try{
-            cultureparcelle.insertCultureParcelle(cp);
-        }catch(Exception ex){
-            ex.printStackTrace();
-        }
-    }
-
-    @PostMapping("/insertHistoriqueCulture")
-    public void insertHistoriqueCulture(@RequestBody CultureParcelle cp){
-        try{
-            cultureparcelle.insertHistoriqueCulture(cp);
-        }catch(Exception ex){
-            ex.printStackTrace();
-        }
-    }
 }

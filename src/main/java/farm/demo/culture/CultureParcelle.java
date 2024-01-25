@@ -76,12 +76,12 @@ public class CultureParcelle extends Culture {
             Connection con = c.conekta();
             String sql = "insert into HistoriqueCulture (idCultureParcelle,dateRecolte) values (?,?)";
             PreparedStatement psd = con.prepareStatement(sql);
-            psd.setInt(1, cp.getIdCultureParcelle());
-            psd.setTimestamp(2, cp.getDatePlantation());
+            psd.setInt(1,cp.getIdCultureParcelle());
+            psd.setTimestamp(2,cp.getDatePlantation());
             psd.executeUpdate();
             psd.close();
             con.close();
-        } catch (Exception ex) {
+        } catch (Exception ex){
             System.out.println(ex.getMessage());
         }
     }
