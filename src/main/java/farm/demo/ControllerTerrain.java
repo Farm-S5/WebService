@@ -22,12 +22,17 @@ public class ControllerTerrain{
     }
 
     @GetMapping("/find")
-    public List<Terrain> findTerrain(){
+    public List<Terrain> findTerrain() throws Exception{
         return terrain.findTerrain();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/getDimension{id}")
     public Terrain getDimension(int id){
         return terrain.getDimension(id);
+    }
+
+    @GetMapping("/findTerrainById{id}")
+    public Terrain findTerrainById(int id){
+        return terrain.findTerrainById(id);
     }
 }

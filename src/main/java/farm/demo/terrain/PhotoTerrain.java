@@ -31,23 +31,25 @@ public class PhotoTerrain extends Terrain{
         this.photos = photos;
     }
     
-    public void insertPhotoTerrain(PhotoTerrain p)
-    {
-        try{
-            Connect c = new Connect("Farmer","123");
+    public void insertPhotoTerrain(Map<String, Object> requestBody) {
+        int idTerrain = (int) requestBody.get("idTerrain");
+        List<String> photos = (List<String>) requestBody.get("photos");
+
+        try {
+            Connect c = new Connect("Farmer", "123");
             Connection con = c.conekta();
-            String sql ="insert into PhotoTerrain (idTerrain,photo) values (?,?)";
+            String sql = "insert into PhotoTerrain (idTerrain, photo) values (?, ?)";
             PreparedStatement psd = con.prepareStatement(sql);
-            psd.setInt(1, p.getIdTerrain());
-            for(String t : p.getPhotos())
-            {
-                psd.setString(2, t);
+
+            for (String photo : photos) {
+                psd.setInt(1, idTerrain);
+                psd.setString(2, photo);
                 psd.executeUpdate();
             }
+
             psd.close();
             con.close();
-        }catch(Exception ex)
-        {
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
     }

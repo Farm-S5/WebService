@@ -103,7 +103,7 @@ public class Terrain {
         try {
             Connect c = new Connect("Farmer", "123");
             Connection con = c.conekta();
-            String sql = "insert into Terrain (longitute,latitude,nbParcelle,descrptionTerrain,etat) values (?,?,?,?,?)";
+            String sql = "insert into Terrain (longitude,latitude,nbParcelle,descriptionterrain,etat) values (?,?,?,?,?)";
             PreparedStatement psd = con.prepareStatement(sql);
             psd.setDouble(1, t.getLongitude());
             psd.setDouble(2, t.getLatitute());
@@ -127,7 +127,7 @@ public class Terrain {
             PreparedStatement psd = con.prepareStatement(sql);
             ResultSet rs = psd.executeQuery();
             while (rs.next()) {
-                lt.add(new Terrain(rs.getDouble(1), rs.getDouble(2), rs.getInt(3), rs.getString(4), rs.getInt(5)));
+                lt.add(new Terrain(rs.getInt(1), rs.getDouble(2), rs.getDouble(3), rs.getInt(4), rs.getString(5),rs.getInt(6)));
             }
             psd.close();
             con.close();
@@ -160,14 +160,14 @@ public class Terrain {
         return u;
     }
 
-    public Terrain findTerrainById(Terrain t) {
+    public Terrain findTerrainById(int t) {
         Terrain u = new Terrain();
         try {
             Connect c = new Connect("Farmer", "123");
             Connection con = c.conekta();
             String sql = "Select * from terrain where idTerrain =?";
             PreparedStatement psd = con.prepareStatement(sql);
-            psd.setInt(1, t.getIdTerrain());
+            psd.setInt(1, t);
             ResultSet rs = psd.executeQuery();
             while (rs.next()) {
                 u.setIdTerrain(rs.getInt(1));

@@ -8,7 +8,7 @@ import java.util.*;
 public class ControllerCultureParcelle{
     private final CultureParcelle cultureparcelle;
 
-    public ControllerCulture(){
+    public ControllerCultureParcelle(){
         this.cultureparcelle=new CultureParcelle();
     }
 
