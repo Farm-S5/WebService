@@ -36,7 +36,7 @@ public class PhotoTerrain extends Terrain{
         List<String> photos = (List<String>) requestBody.get("photos");
 
         try {
-            Connect c = new Connect("Farmer", "123");
+            Connect c = new Connect();
             Connection con = c.conekta();
             String sql = "insert into PhotoTerrain (idTerrain, photo) values (?, ?)";
             PreparedStatement psd = con.prepareStatement(sql);

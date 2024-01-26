@@ -32,7 +32,7 @@ public class TerrainPersonne extends Personne {
 
     public void insertTerrainPersonne(TerrainPersonne tp) {
         try {
-            Connect c = new Connect("Farmer", "123");
+            Connect c = new Connect();
             Connection con = c.conekta();
             String sql = "insert into PersonneTerrain (idUser,idTerrain) values (?,?)";
             PreparedStatement psd = con.prepareStatement(sql);

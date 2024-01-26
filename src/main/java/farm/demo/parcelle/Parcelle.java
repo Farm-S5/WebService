@@ -64,7 +64,7 @@ public class Parcelle extends Terrain{
     public void insertParcelle(Parcelle p)
     {
         try{
-            Connect c= new Connect("Farmer","123");
+            Connect c = new Connect();
             Connection con = c.conekta();
             String sql = "insert into Parcelle (idTerrain,rendement,superficie) values (?,?,?)";
             PreparedStatement psd = con.prepareStatement(sql);
@@ -82,7 +82,7 @@ public class Parcelle extends Terrain{
         public List<Parcelle> findParcelle() {
         List<Parcelle> p = new ArrayList<>();
         try {
-            Connect c = new Connect("Farmer", "123");
+            Connect c = new Connect();
             Connection con = c.conekta();
             String sql = "Select * from Parcelle";
             PreparedStatement psd = con.prepareStatement(sql);

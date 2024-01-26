@@ -69,8 +69,8 @@ public class HistoriqueTerrain {
     
     public void insertHistoriqueTerrain(HistoriqueTerrain ht)
     {
-                try {
-            Connect c = new Connect("Farmer", "123");
+        try {
+            Connect c = new Connect();
             Connection con = c.conekta();
             String sql = "insert into HistoriqueTerrain (idAcheteur,idVendeur,dateAchat) values (?,?,?)";
             PreparedStatement psd = con.prepareStatement(sql);

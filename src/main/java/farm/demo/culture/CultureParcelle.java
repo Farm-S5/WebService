@@ -55,7 +55,7 @@ public class CultureParcelle extends Culture {
     public void insertCultureParcelle(CultureParcelle cp) {
 
         try {
-            Connect c = new Connect("Farmer", "123");
+            Connect c = new Connect();
             Connection con = c.conekta();
             String sql = "insert into CultureParcelle (idParcelle,idCulture,dateplantation) values (?,?,?)";
             PreparedStatement psd = con.prepareStatement(sql);
@@ -72,7 +72,7 @@ public class CultureParcelle extends Culture {
 
     public void insertHistoriqueCulture(CultureParcelle cp) {
         try {
-            Connect c = new Connect("Farmer", "123");
+            Connect c = new Connect();
             Connection con = c.conekta();
             String sql = "insert into HistoriqueCulture (idCultureParcelle,dateRecolte) values (?,?)";
             PreparedStatement psd = con.prepareStatement(sql);

@@ -86,7 +86,7 @@ public class Culture extends Parcelle {
 
     public void insertCulture(Culture cu) {
         try {
-            Connect c = new Connect("Farmer", "123");
+            Connect c = new Connect();
             Connection con = c.conekta();
             String sql = "insert into culture (nameCulture,rendementM2,prixM2,duration) values (?,?,?,?)";
             PreparedStatement psd = con.prepareStatement(sql);
@@ -105,7 +105,7 @@ public class Culture extends Parcelle {
     public List<Culture> findCulture() {
         List<Culture> p = new ArrayList<>();
         try {
-            Connect c = new Connect("Farmer", "123");
+            Connect c = new Connect();
             Connection con = c.conekta();
             String sql = "Select * from culture";
             PreparedStatement psd = con.prepareStatement(sql);
@@ -125,7 +125,7 @@ public class Culture extends Parcelle {
     public List<Culture> findCultureName() {
         List<Culture> p = new ArrayList<>();
         try {
-            Connect c = new Connect("Farmer", "123");
+            Connect c = new Connect();
             Connection con = c.conekta();
             String sql = "Select * from culture";
             PreparedStatement psd = con.prepareStatement(sql);
@@ -144,7 +144,7 @@ public class Culture extends Parcelle {
 
     public void insertCultureValableParcelle(Culture cu) {
         try {
-            Connect c = new Connect("Farmer", "123");
+            Connect c = new Connect();
             Connection con = c.conekta();
             String sql = "insert into culturevalableparcelle (idParcelle,idCulture) values (?,?)";
             PreparedStatement psd = con.prepareStatement(sql);

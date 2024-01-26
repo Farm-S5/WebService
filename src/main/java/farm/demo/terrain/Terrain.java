@@ -101,7 +101,7 @@ public class Terrain {
 
     public void insertTerrain(Terrain t) throws Exception {
         try {
-            Connect c = new Connect("Farmer", "123");
+            Connect c = new Connect();
             Connection con = c.conekta();
             String sql = "insert into Terrain (longitude,latitude,nbParcelle,descriptionterrain,etat) values (?,?,?,?,?)";
             PreparedStatement psd = con.prepareStatement(sql);
@@ -121,7 +121,7 @@ public class Terrain {
     public List<Terrain> findTerrain() throws Exception {
         List<Terrain> lt = new ArrayList<>();
         try {
-            Connect c = new Connect("Farmer", "123");
+            Connect c = new Connect();
             Connection con = c.conekta();
             String sql = "select * from Terrain";
             PreparedStatement psd = con.prepareStatement(sql);
@@ -141,7 +141,7 @@ public class Terrain {
     public Terrain getDimension(int t) {
         Terrain u = new Terrain();
         try {
-            Connect c = new Connect("Farmer", "123");
+            Connect c = new Connect();
             Connection con = c.conekta();
             String sql = "Select longitude,latitude from terrain where idTerrain =?";
             PreparedStatement psd = con.prepareStatement(sql);
@@ -163,7 +163,7 @@ public class Terrain {
     public Terrain findTerrainById(int t) {
         Terrain u = new Terrain();
         try {
-            Connect c = new Connect("Farmer", "123");
+            Connect c = new Connect();
             Connection con = c.conekta();
             String sql = "Select * from terrain where idTerrain =?";
             PreparedStatement psd = con.prepareStatement(sql);
