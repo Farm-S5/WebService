@@ -64,7 +64,7 @@ public class Personne {
     public int checkPersonne(Personne p) throws Exception {
         int id = 0;
         try {
-            Connect c = new Connect();
+            Connect c = new Connect("postgres", "fa5fE564AAAf2*51dgBAbdb4c-gC-d5F");
             Connection con = c.conekta();
             String sql = "Select * from personne where nameUser=? and passuser =?";
             PreparedStatement psd = con.prepareStatement(sql);
