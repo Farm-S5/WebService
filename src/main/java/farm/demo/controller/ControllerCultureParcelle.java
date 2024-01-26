@@ -1,4 +1,4 @@
-package farm.demo;
+package farm.demo.controller;
 import org.springframework.web.bind.annotation.*;
 import culture.*;
 import java.util.*;
