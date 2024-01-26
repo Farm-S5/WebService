@@ -29,6 +29,12 @@ public class HistoriqueTerrain {
         this.dateAchat = dateAchat;
     }
 
+    public HistoriqueTerrain(int idAcheteur, int idVendeur, Date dateAchat) {
+        this.idAcheteur = idAcheteur;
+        this.idVendeur = idVendeur;
+        this.dateAchat = dateAchat;
+    }
+
     public int getIdHistorique() {
         return idHistorique;
     }
