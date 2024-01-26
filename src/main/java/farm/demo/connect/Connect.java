@@ -35,7 +35,7 @@ public class Connect
     public Connection conekta() throws SQLException, ClassNotFoundException {
         Connection con = null;
         try {
-            String jdbcUrl ="postgresql://postgres:fa5fE564AAAf2*51dgBAbdb4c-gC-d5F@monorail.proxy.rlwy.net:23536/railway";
+            String jdbcUrl = "jdbc:postgresql://monorail.proxy.rlwy.net:23536/railway";
             String user ="postgres";
             String mdp="fa5fE564AAAf2*51dgBAbdb4c-gC-d5F";
             Class.forName("org.postgresql.Driver");
