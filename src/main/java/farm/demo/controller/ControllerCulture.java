@@ -3,7 +3,7 @@ import org.springframework.web.bind.annotation.*;
 import culture.*;
 import java.util.*;
 @RestController
-@RequestMapping("/cultures")
+@RequestMapping("/culture")
 public class ControllerCulture
 {
     private final Culture culture;

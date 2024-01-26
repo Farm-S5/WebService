@@ -3,7 +3,7 @@ import org.springframework.web.bind.annotation.*;
 import terrain.*;
 import java.util.*;
 @RestController
-@RequestMapping("/historiqueTerrain")
+@RequestMapping("/historiqueterrain")
 
 public class ControllerHistoriqueTerrain{
     private final HistoriqueTerrain historiqueterrain;

@@ -3,7 +3,7 @@ import org.springframework.web.bind.annotation.*;
 import personne.*;
 import java.util.*;
 @RestController
-@RequestMapping("/personnes")
+@RequestMapping("/personne")
 public class ControllerPersonne {
 
     private final Personne personne;

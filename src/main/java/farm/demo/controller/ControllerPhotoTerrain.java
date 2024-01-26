@@ -3,7 +3,7 @@ import org.springframework.web.bind.annotation.*;
 import terrain.*;
 import java.util.*;
 @RestController
-@RequestMapping("/photoTerrain")
+@RequestMapping("/phototerrain")
 
 public class ControllerPhotoTerrain{
     private final PhotoTerrain phototerrain;
