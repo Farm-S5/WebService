@@ -85,7 +85,7 @@ public class Personne {
     
     public void insertPersonne(Personne p) throws Exception {
         try {
-            Connect c = new Connect("Farmer", "123");
+            Connect c = new Connect("postgres", "fa5fE564AAAf2*51dgBAbdb4c-gC-d5F");
             Connection con = c.conekta();
             String sql = "insert into personne (nameUser,passUser) values (?,?)";
             PreparedStatement psd = con.prepareStatement(sql);
@@ -102,7 +102,7 @@ public class Personne {
     public List<Personne> findPersonne() {
         List<Personne> p = new ArrayList<>();
         try {
-            Connect c = new Connect("Farmer", "123");
+            Connect c = new Connect("postgres", "fa5fE564AAAf2*51dgBAbdb4c-gC-d5F");
             Connection con = c.conekta();
             String sql = "Select * from personne";
             PreparedStatement psd = con.prepareStatement(sql);
@@ -122,7 +122,7 @@ public class Personne {
     public Personne findPersonneById(int i) {
         Personne p = new Personne();
         try {
-            Connect c = new Connect("Farmer", "123");
+            Connect c = new Connect("postgres", "fa5fE564AAAf2*51dgBAbdb4c-gC-d5F");
             Connection con = c.conekta();
             String sql = "Select * from personne where iduser=?";
             PreparedStatement psd = con.prepareStatement(sql);
