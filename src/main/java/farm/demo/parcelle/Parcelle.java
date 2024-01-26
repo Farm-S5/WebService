@@ -26,6 +26,12 @@ public class Parcelle extends Terrain{
         this.superficie = superficie;
     }
 
+    public Parcelle(int idTerrain,float rendement, float superficie) {
+        super(idTerrain);
+        this.rendement = rendement;
+        this.superficie = superficie;
+    }
+
     public Parcelle(int idParcelle) {
         this.idParcelle = idParcelle;
     }
@@ -60,12 +66,11 @@ public class Parcelle extends Terrain{
         try{
             Connect c= new Connect("Farmer","123");
             Connection con = c.conekta();
-            String sql = "insert into Parcelle (idTerrain,idParcelle,rendement,superficie) values (?,?,?,?)";
+            String sql = "insert into Parcelle (idTerrain,rendement,superficie) values (?,?,?)";
             PreparedStatement psd = con.prepareStatement(sql);
             psd.setInt(1, p.getIdTerrain());
-            psd.setInt(2, p.getIdParcelle());
-            psd.setFloat(3, p.getRendement());
-            psd.setFloat(4, p.getSuperficie());
+            psd.setFloat(2, p.getRendement());
+            psd.setFloat(3, p.getSuperficie());
             psd.executeUpdate();
             psd.close();
             con.close();
