@@ -64,7 +64,7 @@ public class Personne {
     public int checkPersonne(Personne p) throws Exception {
         int id = 0;
         try {
-            Connect c = new Connect("Farmer", "123");
+            Connect c = new Connect();
             Connection con = c.conekta();
             String sql = "Select * from personne where nameUser=? and passuser =?";
             PreparedStatement psd = con.prepareStatement(sql);

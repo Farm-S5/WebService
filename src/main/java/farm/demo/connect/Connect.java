@@ -36,7 +36,7 @@ public class Connect
         Connection con = null;
         try {
             Class.forName("org.postgresql.Driver");
-            con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/City", this.user, this.mdp);
+            con = DriverManager.getConnection("postgresql://postgres:fa5fE564AAAf2*51dgBAbdb4c-gC-d5F@monorail.proxy.rlwy.net:23536/railway","postgres","fa5fE564AAAf2*51dgBAbdb4c-gC-d5F");
         } catch (SQLException e) {
             throw e;
         }
