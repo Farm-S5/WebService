@@ -12,17 +12,17 @@ public class ControllerPersonne {
         this.personne = new Personne();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/findPersonneById{id}")
     public Personne getPersonneById(@PathVariable int id) {
         return personne.findPersonneById(id);
     }
 
-    @GetMapping("/find")
+    @GetMapping("/findPersonne")
     public List<Personne> getAllPersonnes() {
         return personne.findPersonne();
     }
 
-    @PostMapping("/insert")
+    @PostMapping("/insertPersonne")
     public void insertPersonne(@RequestBody Personne p) {
         try {
             personne.insertPersonne(p);
@@ -31,7 +31,7 @@ public class ControllerPersonne {
         }
     }
 
-    @PostMapping("/check")
+    @PostMapping("/checkPersonne")
     public int checkPersonne(@RequestBody Personne p) {
         try {
             return personne.checkPersonne(p);
