@@ -35,7 +35,7 @@ public class ControllerTerrain{
     public Terrain findTerrainById(@PathVariable int id){
         return terrain.findTerrainById(id);
     }
-    
+
     @PostMapping("/validerTerrain/{id}")
     public void changeEtatTerrain(@PathVariable int id){
         try{

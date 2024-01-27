@@ -124,7 +124,7 @@ public class Terrain {
         try{
             connect.Connect c = new Connect();
             Connection con = c.conekta();
-            String sql ="Update table terrain set etat=1 where idTerrain=?";
+            String sql ="Update terrain set etat=1 where idTerrain=?";
             PreparedStatement psd = con.prepareStatement(sql);
             psd.executeUpdate();
             psd.close();
