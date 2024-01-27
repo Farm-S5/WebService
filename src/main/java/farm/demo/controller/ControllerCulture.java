@@ -4,6 +4,7 @@ import culture.*;
 import java.util.*;
 @RestController
 @RequestMapping("/culture")
+
 public class ControllerCulture
 {
     private final Culture culture;
@@ -18,7 +19,7 @@ public class ControllerCulture
     //     "prixM2":"1000",
     //     "duration":"00:05:00"
     // }
-    @PostMapping("/insert")
+    @PostMapping("/insertCulture")
     public void insertCulture(@RequestBody Culture cu){
         try{
             culture.insertCulture(cu);
@@ -27,12 +28,12 @@ public class ControllerCulture
         }
     }
 
-    @GetMapping("/find")
+    @GetMapping("/findCulture")
     public List<Culture> findCulture(){
         return culture.findCulture();
     }
 
-    @GetMapping("/findName")
+    @GetMapping("/findCultureName")
     public List<Culture> findCultureName(){
         return culture.findCultureName();
     }

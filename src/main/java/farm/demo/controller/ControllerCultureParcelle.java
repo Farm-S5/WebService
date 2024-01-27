@@ -21,7 +21,7 @@ public class ControllerCultureParcelle{
         }
     }
 
-    @PostMapping("/insertHistoriqueCulture")
+    @PostMapping("/insertHistoriqueParcelle")
     public void insertHistoriqueCulture(@RequestBody CultureParcelle cp){
         try{
             cultureparcelle.insertHistoriqueCulture(cp);

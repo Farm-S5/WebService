@@ -98,4 +98,28 @@ public class Parcelle extends Terrain{
         }
         return p;
     }
+
+    public Parcelle findParcelleById(int id) {
+        Parcelle p = new Parcelle();
+        try {
+            Connect c = new Connect();
+            Connection con = c.conekta();
+            String sql = "Select * from Parcelle where idParcelle=?";
+            PreparedStatement psd = con.prepareStatement(sql);
+            psd.setInt(1,id);
+            ResultSet rs = psd.executeQuery();
+            while (rs.next()) {
+                p.setIdTerrain(rs.getInt(1));
+                p.setIdParcelle(rs.getInt(2));
+                p.setRendement(rs.getFloat(3));
+                p.setSuperficie(rs.getFloat(4));
+            }
+            psd.close();
+            con.close();
+            return p;
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return p;
+    }
 }

@@ -52,8 +52,8 @@ public class CultureParcelle extends Culture {
         this.datePlantation = datePlantation;
     }
 
+    // Plantation
     public void insertCultureParcelle(CultureParcelle cp) {
-
         try {
             Connect c = new Connect();
             Connection con = c.conekta();

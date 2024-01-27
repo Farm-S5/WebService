@@ -21,7 +21,7 @@ public class ControllerParcelle{
         }
     }
 
-    @GetMapping("/find")
+    @GetMapping("/findParcelle")
     public List<Parcelle> findParcelle(){
         return parcelle.findParcelle();
     }
