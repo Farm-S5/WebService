@@ -27,12 +27,21 @@ public class ControllerTerrain{
     }
 
     @GetMapping("/getDimensionById/{id}")
-    public Terrain getDimension(int id){
+    public Terrain getDimension(@PathVariable int id){
         return terrain.getDimension(id);
     }
 
     @GetMapping("/findTerrainById/{id}")
-    public Terrain findTerrainById(int id){
+    public Terrain findTerrainById(@PathVariable int id){
         return terrain.findTerrainById(id);
+    }
+    
+    @PostMapping("/validerTerrain/{id}")
+    public void changeEtatTerrain(@PathVariable int id){
+        try{
+            terrain.changeEtatTerrain(id);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
     }
 }

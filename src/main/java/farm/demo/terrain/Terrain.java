@@ -5,6 +5,8 @@
 package terrain;
 
 import connect.*;
+import connect.Connect;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -115,6 +117,20 @@ public class Terrain {
             con.close();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
+        }
+    }
+
+    public void changeEtatTerrain(int id){
+        try{
+            connect.Connect c = new Connect();
+            Connection con = c.conekta();
+            String sql ="Update table terrain set etat=1 where idTerrain=?";
+            PreparedStatement psd = con.prepareStatement(sql);
+            psd.executeUpdate();
+            psd.close();
+            con.close();
+        }catch (Exception ex){
+            ex.getStackTrace();
         }
     }
 
