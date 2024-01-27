@@ -12,7 +12,7 @@ public class ControllerPersonne {
         this.personne = new Personne();
     }
 
-    @GetMapping("/findPersonneById{id}")
+    @GetMapping("/findPersonneById/{id}")
     public Personne getPersonneById(@PathVariable int id) {
         return personne.findPersonneById(id);
     }
