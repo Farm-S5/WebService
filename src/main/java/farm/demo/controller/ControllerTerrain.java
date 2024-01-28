@@ -46,7 +46,7 @@ public class ControllerTerrain{
     }
 
     @GetMapping("/findTerrainValider")
-    public List<Terrain> findTerrainValider(){
+    public List<Terrain> findTerrainEtat1(){
         return terrain.findTerrainEtat1();
     }
 }
