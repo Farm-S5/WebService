@@ -39,7 +39,7 @@ public class ControllerTerrain{
     @PostMapping("/validerTerrain/{id}")
     public void changeEtatTerrain(@PathVariable int id){
         try{
-            Terrain.changeEtatTerrain(id);
+            terrain.changeEtatTerrain(id);
         }catch (Exception ex){
             ex.printStackTrace();
         }
