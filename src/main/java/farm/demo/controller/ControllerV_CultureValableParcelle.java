@@ -17,7 +17,7 @@ public class ControllerV_CultureValableParcelle {
         this.vculture= new V_CultureValableParcelle();
     }
 
-    @GetMapping("/findCultureValableByIdParcelle")
+    @GetMapping("/findCultureValableByIdParcelle/{id}")
     public List<V_CultureValableParcelle> findCultureValable(@PathVariable int id){
         return vculture.findCultureValableByIdParcelle(id);
     }
