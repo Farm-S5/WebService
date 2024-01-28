@@ -123,8 +123,8 @@ public class Parcelle extends Terrain{
         return p;
     }
 
-    public Parcelle findParcelleByIdTerrain(int id) {
-        Parcelle p = new Parcelle();
+    public List<Parcelle> findParcelleByIdTerrain(int id) {
+        List<Parcelle> p = new ArrayList<>();
         try {
             Connect c = new Connect();
             Connection con = c.conekta();
@@ -133,10 +133,7 @@ public class Parcelle extends Terrain{
             psd.setInt(1,id);
             ResultSet rs = psd.executeQuery();
             while (rs.next()) {
-                p.setIdTerrain(rs.getInt(1));
-                p.setIdParcelle(rs.getInt(2));
-                p.setRendement(rs.getFloat(3));
-                p.setSuperficie(rs.getFloat(4));
+                p.add(new Parcelle(rs.getInt(1),rs.getInt(2),rs.getFloat(3),rs.getFloat(4)));
             }
             psd.close();
             con.close();
