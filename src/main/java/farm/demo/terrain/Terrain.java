@@ -19,7 +19,7 @@ public class Terrain {
 
     int idTerrain;
     double longitude;
-    double latitute;
+    double latitude;
     int nbParcelle;
     String descriptionTerrain;
     int etat;
@@ -31,26 +31,26 @@ public class Terrain {
         this.idTerrain = idTerrain;
     }
 
-    public Terrain(int idTerrain, double longitude, double latitute, int nbParcelle, String descriptionTerrain, int etat) {
+    public Terrain(int idTerrain, double longitude, double latitude, int nbParcelle, String descriptionTerrain, int etat) {
         this.idTerrain = idTerrain;
         this.longitude = longitude;
-        this.latitute = latitute;
+        this.latitude = latitude;
         this.nbParcelle = nbParcelle;
         this.descriptionTerrain = descriptionTerrain;
         this.etat = etat;
     }
 
-    public Terrain(double longitude, double latitute, int nbParcelle, String descriptionTerrain, int etat) {
+    public Terrain(double longitude, double latitude, int nbParcelle, String descriptionTerrain, int etat) {
         this.longitude = longitude;
-        this.latitute = latitute;
+        this.latitude = latitude;
         this.nbParcelle = nbParcelle;
         this.descriptionTerrain = descriptionTerrain;
         this.etat = etat;
     }
 
-    public Terrain(double longitude, double latitute) {
+    public Terrain(double longitude, double latitude) {
         this.longitude = longitude;
-        this.latitute = latitute;
+        this.latitude = latitude;
     }
 
     public int getIdTerrain() {
@@ -61,8 +61,8 @@ public class Terrain {
         return longitude;
     }
 
-    public double getLatitute() {
-        return latitute;
+    public double getLatitude() {
+        return latitude;
     }
 
     public int getNbParcelle() {
@@ -85,8 +85,8 @@ public class Terrain {
         this.longitude = longitude;
     }
 
-    public void setLatitute(double latitute) {
-        this.latitute = latitute;
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
 
     public void setNbParcelle(int nbParcelle) {
@@ -108,7 +108,7 @@ public class Terrain {
             String sql = "insert into Terrain (longitude,latitude,nbParcelle,descriptionterrain,etat) values (?,?,?,?,?)";
             PreparedStatement psd = con.prepareStatement(sql);
             psd.setDouble(1, t.getLongitude());
-            psd.setDouble(2, t.getLatitute());
+            psd.setDouble(2, t.getLatitude());
             psd.setInt(3, t.getNbParcelle());
             psd.setString(4, t.getDescriptionTerrain());
             psd.setInt(5, t.getEtat());
@@ -165,7 +165,7 @@ public class Terrain {
             ResultSet rs = psd.executeQuery();
             while (rs.next()) {
                 u.setLongitude(rs.getFloat(1));
-                u.setLatitute(rs.getFloat(2));
+                u.setLatitude(rs.getFloat(2));
             }
             psd.close();
             con.close();
@@ -188,7 +188,7 @@ public class Terrain {
             while (rs.next()) {
                 u.setIdTerrain(rs.getInt(1));
                 u.setLongitude(rs.getFloat(2));
-                u.setLatitute(rs.getFloat(3));
+                u.setLatitude(rs.getFloat(3));
                 u.setNbParcelle(rs.getInt(4));
                 u.setDescriptionTerrain(rs.getString(5));
                 u.setEtat(rs.getInt(6));
