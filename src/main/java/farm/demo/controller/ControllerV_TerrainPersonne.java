@@ -3,6 +3,8 @@ import farm.demo.terrain.V_TerrainPersonne;
 import org.springframework.web.bind.annotation.*;
 import terrain.*;
 import java.util.*;
+@RestController
+@RequestMapping("/viewterrainpersonne")
 public class ControllerV_TerrainPersonne {
     private final V_TerrainPersonne viewTerrainPersonne;
 
