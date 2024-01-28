@@ -12,12 +12,12 @@ public class ControllerV_TerrainPersonne {
         this.viewTerrainPersonne =new V_TerrainPersonne();
     }
 
-    @GetMapping("/findTerrainPersonneNonValider")
+    @GetMapping("/findTerrainPersonneNonValider/{id}")
     public List<V_TerrainPersonne> findTerrainPersonneNonValider(@PathVariable int id){
         return viewTerrainPersonne.findTerrainPersonneNonValider(id);
     }
 
-    @GetMapping("/findTerrainPersonneValider")
+    @GetMapping("/findTerrainPersonneValider/{id}")
     public List<V_TerrainPersonne> findTerrainPersonneValider(@PathVariable int id){
         return viewTerrainPersonne.findTerrainPersonneValider(id);
     }
