@@ -130,8 +130,8 @@ public class Parcelle extends Terrain{
             Connection con = c.conekta();
             String sql = "Select * from Parcelle where idTerrain=?";
             PreparedStatement psd = con.prepareStatement(sql);
-            ResultSet rs = psd.executeQuery();
             psd.setInt(1,id);
+            ResultSet rs = psd.executeQuery();
             while (rs.next()) {
                 p.add(new Parcelle(rs.getInt(1), rs.getInt(2),rs.getFloat(3),rs.getFloat(4)));
             }
