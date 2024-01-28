@@ -99,7 +99,7 @@ public class Parcelle extends Terrain{
         return p;
     }
 
-    public Parcelle findParcelleById(int id) {
+    public Parcelle findParcelleByIdParcelle(int id) {
         Parcelle p = new Parcelle();
         try {
             Connect c = new Connect();

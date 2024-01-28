@@ -28,7 +28,7 @@ public class ControllerParcelle{
 
     @GetMapping("/findParcelleByIdParcelle/{id}")
     public Parcelle findParcelleByIdParcelle(@PathVariable int id){
-        return parcelle.findParcelleById(id);
+        return parcelle.findParcelleByIdParcelle(id);
     }
 
     @GetMapping("/findParcelleByIdTerrain/{id}")
