@@ -222,4 +222,24 @@ public class Terrain {
         }
         return lt;
     }
+
+    public List<Terrain> findTerrainEtat0() {
+        List<Terrain> lt = new ArrayList<>();
+        try {
+            Connect c = new Connect();
+            Connection con = c.conekta();
+            String sql = "select * from Terrain where etat=0";
+            PreparedStatement psd = con.prepareStatement(sql);
+            ResultSet rs = psd.executeQuery();
+            while (rs.next()) {
+                lt.add(new Terrain(rs.getInt(1), rs.getDouble(2), rs.getDouble(3), rs.getInt(4), rs.getString(5), rs.getInt(6)));
+            }
+            psd.close();
+            con.close();
+            return lt;
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return lt;
+    }
 }
