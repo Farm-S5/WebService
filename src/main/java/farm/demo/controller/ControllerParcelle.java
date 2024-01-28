@@ -26,12 +26,12 @@ public class ControllerParcelle{
         return parcelle.findParcelle();
     }
 
-    @GetMapping("/findParcelleById/{id}")
+    @GetMapping("/findParcelleByIdParcelle/{id}")
     public Parcelle findParcelleByIdParcelle(@PathVariable int id){
         return parcelle.findParcelleById(id);
     }
 
-    @GetMapping("/findParcelleByIdParcelle/{id}")
+    @GetMapping("/findParcelleByIdTerrain/{id}")
     public List<Parcelle> findParcelleByIdTerrain(@PathVariable int id){
         return parcelle.findParcelleByIdTerrain(id);
     }
