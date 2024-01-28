@@ -53,4 +53,27 @@ public class PhotoTerrain extends Terrain{
             System.out.println(ex.getMessage());
         }
     }
+
+    public List<PhotoTerrain> findTerrainPhotoById(int id){
+        List<PhotoTerrain> lt = new ArrayList<>();
+        try {
+            connect.Connect c = new connect.Connect();
+            Connection con = c.conekta();
+            String sql = "select * from PhotoTerrain where idTerrain=?";
+            PreparedStatement psd = con.prepareStatement(sql);
+            psd.setInt(1,id);
+            ResultSet rs = psd.executeQuery();
+            while (rs.next()) {
+                String photos =rs.getString("photo");
+                int idTerrain = rs.getInt("idTerrain");
+                lt.add(new PhotoTerrain(Collections.singletonList(photos),idTerrain));
+            }
+            psd.close();
+            con.close();
+            return lt;
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return lt;
+    }
 }

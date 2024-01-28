@@ -20,4 +20,9 @@ public class ControllerPhotoTerrain{
             ex.printStackTrace();
         }
     }
+
+    @GetMapping("/findPhotoTerrainByIdTerrain/{id}")
+    public List<PhotoTerrain> findPhotoTerrain(@PathVariable int id){
+        return phototerrain.findTerrainPhotoById(id);
+    }
 }
