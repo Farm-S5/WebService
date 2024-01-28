@@ -120,17 +120,17 @@ public class Terrain {
         }
     }
 
-    public void changeEtatTerrain(int id){
-        try{
+    public void changeEtatTerrain(int id) {
+        try {
             connect.Connect c = new Connect();
             Connection con = c.conekta();
-            String sql ="Update terrain set etat=1 where idTerrain=?";
+            String sql = "Update terrain set etat=1 where idTerrain=?";
             PreparedStatement psd = con.prepareStatement(sql);
-            psd.setInt(1,id);
+            psd.setInt(1, id);
             psd.executeUpdate();
             psd.close();
             con.close();
-        }catch (Exception ex){
+        } catch (Exception ex) {
             ex.getStackTrace();
         }
     }
@@ -144,7 +144,7 @@ public class Terrain {
             PreparedStatement psd = con.prepareStatement(sql);
             ResultSet rs = psd.executeQuery();
             while (rs.next()) {
-                lt.add(new Terrain(rs.getInt(1), rs.getDouble(2), rs.getDouble(3), rs.getInt(4), rs.getString(5),rs.getInt(6)));
+                lt.add(new Terrain(rs.getInt(1), rs.getDouble(2), rs.getDouble(3), rs.getInt(4), rs.getString(5), rs.getInt(6)));
             }
             psd.close();
             con.close();
@@ -201,5 +201,25 @@ public class Terrain {
             System.out.println(ex.getMessage());
         }
         return u;
+    }
+
+    public List<Terrain> findTerrainEtat1() {
+        List<Terrain> t = new ArrayList<>();
+        try {
+            Connect c = new Connect();
+            Connection con = c.conekta();
+            String sql = "select * from terrain where etat =1";
+            PreparedStatement psd = con.prepareStatement(sql);
+            ResultSet rs = psd.executeQuery();
+            while (rs.next()) {
+                t.add(new Terrain(rs.getInt(1), rs.getDouble(2), rs.getDouble(2), rs.getInt(3), rs.getString(4), rs.getInt(5)));
+            }
+            psd.close();
+            con.close();
+            return t;
+        } catch (Exception ex) {
+            ex.getStackTrace();
+        }
+        return t;
     }
 }

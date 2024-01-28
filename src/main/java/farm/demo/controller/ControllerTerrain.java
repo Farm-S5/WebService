@@ -44,4 +44,9 @@ public class ControllerTerrain{
             ex.printStackTrace();
         }
     }
+
+    @GetMapping("/findTerrainValider")
+    public List<terrain.Terrain> findTerrainValider(){
+        return terrain.findTerrainEtat1();
+    }
 }
