@@ -5,7 +5,7 @@ import connect.*;
 public class V_TerrainPersonne extends terrain.Terrain {
     int idUser;
 
-    public V_TerrainPersonne(int idTerrain, double longitude, double latitude, int nbParcelle, String descriptionTerrain, int etat, int idUser) {
+    public V_TerrainPersonne(int idUser,int idTerrain, double longitude, double latitude, int nbParcelle, String descriptionTerrain, int etat) {
         super(idTerrain, longitude, latitude, nbParcelle, descriptionTerrain, etat);
         this.idUser = idUser;
     }
@@ -31,7 +31,7 @@ public class V_TerrainPersonne extends terrain.Terrain {
             psd.setInt(1,idPersonne);
             ResultSet rs = psd.executeQuery();
             while (rs.next()) {
-                lt.add(new V_TerrainPersonne(rs.getInt(1), rs.getDouble(2), rs.getDouble(3), rs.getInt(4), rs.getString(5), rs.getInt(6),rs.getInt(7)));
+                lt.add(new V_TerrainPersonne(rs.getInt(1),rs.getInt(2), rs.getDouble(3), rs.getDouble(4), rs.getInt(5), rs.getString(6), rs.getInt(7)));
             }
             psd.close();
             con.close();
@@ -52,7 +52,7 @@ public class V_TerrainPersonne extends terrain.Terrain {
             psd.setInt(1,idPersonne);
             ResultSet rs = psd.executeQuery();
             while (rs.next()) {
-                lt.add(new V_TerrainPersonne(rs.getInt(1), rs.getDouble(2), rs.getDouble(3), rs.getInt(4), rs.getString(5), rs.getInt(6),rs.getInt(7)));
+                lt.add(new V_TerrainPersonne(rs.getInt(1),rs.getInt(2), rs.getDouble(3), rs.getDouble(4), rs.getInt(5), rs.getString(6), rs.getInt(7)));
             }
             psd.close();
             con.close();
