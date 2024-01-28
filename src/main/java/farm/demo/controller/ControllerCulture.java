@@ -13,12 +13,6 @@ public class ControllerCulture
         this.culture=new Culture();
     }
 
-    // {
-    //     "nameCulture": "Pomme",
-    //     "rendementM2": "75",
-    //     "prixM2":"1000",
-    //     "duration":"00:05:00"
-    // }
     @PostMapping("/insertCulture")
     public void insertCulture(@RequestBody Culture cu){
         try{
