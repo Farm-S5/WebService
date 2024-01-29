@@ -41,7 +41,7 @@ public class V_HistoriqueTerrainPersonne extends terrain.HistoriqueTerrain {
         try{
             connect.Connect c = new connect.Connect();
             Connection con = c.conekta();
-            String sql="select * from historiqueTerrain";
+            String sql="select * from v_historiqueTerrainPersonne";
             PreparedStatement psd=con.prepareStatement(sql);
             ResultSet rs = psd.executeQuery();
             while(rs.next()){
@@ -62,7 +62,7 @@ public class V_HistoriqueTerrainPersonne extends terrain.HistoriqueTerrain {
         try{
             connect.Connect c= new connect.Connect();
             Connection con = c.conekta();
-            String sql = "Select * from historiqueTerrain where idAcheteur=?";
+            String sql = "Select * from v_historiqueTerrainPersonne where idAcheteur=?";
             PreparedStatement psd = con.prepareStatement(sql);
             psd.setInt(1,id);
             ResultSet rs = psd.executeQuery();
@@ -84,7 +84,7 @@ public class V_HistoriqueTerrainPersonne extends terrain.HistoriqueTerrain {
         try{
             connect.Connect c= new connect.Connect();
             Connection con = c.conekta();
-            String sql = "Select * from historiqueTerrain where idVendeur=?";
+            String sql = "Select * from v_historiqueTerrainPersonne where idVendeur=?";
             PreparedStatement psd = con.prepareStatement(sql);
             psd.setInt(1,id);
             ResultSet rs = psd.executeQuery();
