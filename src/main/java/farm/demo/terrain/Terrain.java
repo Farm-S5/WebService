@@ -112,13 +112,12 @@ public class Terrain {
         try {
             Connect c = new Connect();
             Connection con = c.conekta();
-            String sql = "insert into Terrain (longitude,latitude,nbParcelle,descriptionterrain,etat) values (?,?,?,?,?)";
+            String sql = "insert into Terrain (longitude,latitude,nbParcelle,descriptionterrain,etat) values (?,?,?,?,0)";
             PreparedStatement psd = con.prepareStatement(sql);
             psd.setDouble(1, t.getLongitude());
             psd.setDouble(2, t.getLatitude());
             psd.setInt(3, t.getNbParcelle());
             psd.setString(4, t.getDescriptionTerrain());
-            psd.setInt(5, t.getEtat());
             psd.executeUpdate();
             psd.close();
             con.close();
