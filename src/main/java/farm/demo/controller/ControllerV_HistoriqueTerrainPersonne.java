@@ -19,13 +19,13 @@ public class ControllerV_HistoriqueTerrainPersonne {
         return vhistopersonne.findHistoriqueTerrain();
     }
     @CrossOrigin(origins = "*")
-    @GetMapping("/findHitoriqueTerrainPersonneByAcheteur/{id}")
+    @GetMapping("/findHistoriqueTerrainPersonneByAcheteur/{id}")
     public List<V_HistoriqueTerrainPersonne> findHistoriqueTerrainPersonneByAcheteur(@PathVariable int id){
         return vhistopersonne.findHistoriqueTerrainByIdAcheteur(id);
     }
     @CrossOrigin(origins = "*")
     @GetMapping("/findHistoriqueTerrainPersonneByVendeur/{id}")
-    public List<V_HistoriqueTerrainPersonne> finidHistoriqueTerrainPersonneByVendeur(@PathVariable int id){
-        return vhistopersonne.findHistoriqueTerrainByIdAcheteur(id);
+    public List<V_HistoriqueTerrainPersonne> findHistoriqueTerrainPersonneByVendeur(@PathVariable int id){
+        return vhistopersonne.findHistoriqueTerrainByIdVendeur(id);
     }
 }
