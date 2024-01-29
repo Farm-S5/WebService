@@ -5,7 +5,7 @@
 package culture;
 
 import java.sql.*;
-import java.util.*;
+
 import connect.*;
 
 /**
@@ -89,4 +89,5 @@ public class CultureParcelle extends Culture {
             System.out.println(ex.getMessage());
         }
     }
+
 }

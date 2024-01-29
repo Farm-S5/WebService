@@ -29,14 +29,4 @@ public class ControllerCultureParcelle{
             ex.printStackTrace();
         }
     }
-
-    @CrossOrigin("*")
-    @PostMapping("/insertHistoriqueCulture")
-    public void addHistoriqueCulture(@RequestBody culture.CultureParcelle cp){
-        try {
-            cultureparcelle.addHistoriqueCulture(cp);
-        }catch (Exception ex){
-            ex.getStackTrace();
-        }
-    }
 }
