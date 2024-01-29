@@ -5,7 +5,7 @@ import java.util.*;
 @RestController
 @RequestMapping("/culture")
 
-public class ControllerCulture
+public class ControllerCultur
 {
     private final Culture culture;
 
