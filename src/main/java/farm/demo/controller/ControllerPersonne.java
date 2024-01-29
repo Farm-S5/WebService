@@ -11,17 +11,17 @@ public class ControllerPersonne {
     public ControllerPersonne() {
         this.personne = new Personne();
     }
-
+    @CrossOrigin(origins = "*")
     @GetMapping("/findPersonneById/{id}")
     public Personne getPersonneById(@PathVariable int id) {
         return personne.findPersonneById(id);
     }
-
+    @CrossOrigin(origins = "*")
     @GetMapping("/findPersonne")
     public List<Personne> getAllPersonnes() {
         return personne.findPersonne();
     }
-
+    @CrossOrigin(origins = "*")
     @PostMapping("/insertPersonne")
     public void insertPersonne(@RequestBody Personne p) {
         try {
@@ -30,7 +30,7 @@ public class ControllerPersonne {
             e.printStackTrace();
         }
     }
-
+    @CrossOrigin(origins = "*")
     @PostMapping("/checkPersonne")
     public int checkPersonne(@RequestBody Personne p) {
         try {
