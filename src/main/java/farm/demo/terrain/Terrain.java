@@ -60,6 +60,14 @@ public class Terrain {
         this.etat = etat;
     }
 
+    public Terrain(int idTerrain, double longitude, double latitude, int nbParcelle, String descriptionTerrain) {
+        this.idTerrain = idTerrain;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.nbParcelle = nbParcelle;
+        this.descriptionTerrain = descriptionTerrain;
+    }
+
     public int getIdTerrain() {
         return idTerrain;
     }
