@@ -36,4 +36,10 @@ public class ControllerCultureParcelle{
             ex.printStackTrace();
         }
     }
+
+    @CrossOrigin("*")
+    @GetMapping("/findHistoriqueCultureParcelle")
+    public List<culture.CultureParcelle> findHistoriqueCulture(){
+        return cultureparcelle.findHistoriqueCulture();
+    }
 }

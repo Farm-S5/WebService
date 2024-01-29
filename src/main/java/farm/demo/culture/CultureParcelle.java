@@ -126,4 +126,24 @@ public class CultureParcelle extends culture.Culture {
         }
     }
 
+    public List<CultureParcelle> findHistoriqueCulture(){
+        List<CultureParcelle> p = new ArrayList<>();
+        try {
+            connect.Connect c = new connect.Connect();
+            Connection con = c.conekta();
+            String sql = "Select * from historiqueculture";
+            PreparedStatement psd = con.prepareStatement(sql);
+            ResultSet rs = psd.executeQuery();
+            while (rs.next()) {
+                p.add(new CultureParcelle(rs.getInt(1),rs.getTimestamp(2)));
+            }
+            psd.close();
+            con.close();
+            return p;
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return p;
+    }
+
 }
