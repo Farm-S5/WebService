@@ -11,7 +11,7 @@ public class ControllerCultureParcelle{
     public ControllerCultureParcelle(){
         this.cultureparcelle=new CultureParcelle();
     }
-
+    @CrossOrigin(origins = "*")
     @PostMapping("/insertCultureParcelle")
     public void insertCultureParcelle(@RequestBody CultureParcelle cp){
         try{
@@ -20,7 +20,7 @@ public class ControllerCultureParcelle{
             ex.printStackTrace();
         }
     }
-
+    @CrossOrigin(origins = "*")
     @PostMapping("/insertHistoriqueParcelle")
     public void insertHistoriqueCulture(@RequestBody CultureParcelle cp){
         try{

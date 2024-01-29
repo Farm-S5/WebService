@@ -11,7 +11,7 @@ public class ControllerHistoriqueTerrain{
     public ControllerHistoriqueTerrain(){
         this.historiqueterrain = new HistoriqueTerrain();
     }
-
+    @CrossOrigin(origins = "*")
     @PostMapping("/insertHistoriqueTerrain")
     public void insertHistoriqueTerrain(@RequestBody HistoriqueTerrain ht){
         try{

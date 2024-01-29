@@ -11,7 +11,7 @@ public class ControllerTerrain{
     public ControllerTerrain(){
         this.terrain=new Terrain();
     }
-
+    @CrossOrigin(origins = "*")
     @PostMapping("/insertTerrain")
     public void insertTerrain(@RequestBody Terrain terrain){
         try{
@@ -20,22 +20,22 @@ public class ControllerTerrain{
             ex.printStackTrace();
         }
     }
-
+    @CrossOrigin(origins = "*")
     @GetMapping("/findTerrain")
     public List<Terrain> findTerrain() throws Exception{
         return terrain.findTerrain();
     }
-
+    @CrossOrigin(origins = "*")
     @GetMapping("/getDimensionById/{id}")
     public Terrain getDimension(@PathVariable int id){
         return terrain.getDimension(id);
     }
-
+    @CrossOrigin(origins = "*")
     @GetMapping("/findTerrainById/{id}")
     public Terrain findTerrainById(@PathVariable int id){
         return terrain.findTerrainById(id);
     }
-
+    @CrossOrigin(origins = "*")
     @PostMapping("/validerTerrain/{id}")
     public void changeEtatTerrain(@PathVariable int id){
         try{
@@ -44,12 +44,12 @@ public class ControllerTerrain{
             ex.printStackTrace();
         }
     }
-
+    @CrossOrigin(origins = "*")
     @GetMapping("/findTerrainValider")
     public List<Terrain> findTerrainEtat1(){
         return terrain.findTerrainEtat1();
     }
-
+    @CrossOrigin(origins = "*")
     @GetMapping("/findTerrainNonValider")
     public List<Terrain> findTerrainEtat0(){
         return terrain.findTerrainEtat0();

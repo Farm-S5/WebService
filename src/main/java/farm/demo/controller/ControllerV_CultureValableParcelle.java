@@ -1,10 +1,7 @@
 package farm.demo.controller;
 
 import farm.demo.culture.V_CultureValableParcelle;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,7 +13,7 @@ public class ControllerV_CultureValableParcelle {
     public ControllerV_CultureValableParcelle(){
         this.vculture= new V_CultureValableParcelle();
     }
-
+    @CrossOrigin(origins = "*")
     @GetMapping("/findCultureValableByIdParcelle/{id}")
     public List<V_CultureValableParcelle> findCultureValable(@PathVariable int id){
         return vculture.findCultureValableByIdParcelle(id);

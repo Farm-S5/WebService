@@ -11,7 +11,7 @@ public class ControllerPhotoTerrain{
     public ControllerPhotoTerrain(){
         this.phototerrain = new PhotoTerrain();
     }
-
+    @CrossOrigin(origins = "*")
     @PostMapping("/insertPhotoTerrain")
     public void insertPhotoTerrain(@RequestBody Map<String, Object> requestBody ){
         try{
@@ -20,7 +20,7 @@ public class ControllerPhotoTerrain{
             ex.printStackTrace();
         }
     }
-
+    @CrossOrigin(origins = "*")
     @GetMapping("/findPhotoTerrainByIdTerrain/{id}")
     public List<PhotoTerrain> findPhotoTerrain(@PathVariable int id){
         return phototerrain.findTerrainPhotoById(id);

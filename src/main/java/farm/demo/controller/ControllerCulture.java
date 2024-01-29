@@ -12,7 +12,7 @@ public class ControllerCulture
     public ControllerCulture(){
         this.culture=new Culture();
     }
-
+    @CrossOrigin(origins = "*")
     @PostMapping("/insertCulture")
     public void insertCulture(@RequestBody Culture cu){
         try{
@@ -21,17 +21,17 @@ public class ControllerCulture
             e.printStackTrace();
         }
     }
-
+    @CrossOrigin(origins = "*")
     @GetMapping("/findCulture")
     public List<Culture> findCulture(){
         return culture.findCulture();
     }
-
+    @CrossOrigin(origins = "*")
     @GetMapping("/findCultureName")
     public List<Culture> findCultureName(){
         return culture.findCultureName();
     }
-
+    @CrossOrigin(origins = "*")
     @PostMapping("/insertCultureValableParcelle")
     public void insertCultureValableParcelle(@RequestBody Culture cu){
         try{

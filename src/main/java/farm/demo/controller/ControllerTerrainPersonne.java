@@ -10,7 +10,7 @@ public class ControllerTerrainPersonne{
     public ControllerTerrainPersonne(){
         this.terrainpersonne = new TerrainPersonne();
     }
-
+    @CrossOrigin(origins = "*")
     @PostMapping("/insertTerrainPersonne")
     public void insertTerrainPersonne(@RequestBody TerrainPersonne p){
         try{

@@ -11,12 +11,12 @@ public class ControllerV_TerrainPersonne {
     public ControllerV_TerrainPersonne(){
         this.viewTerrainPersonne =new V_TerrainPersonne();
     }
-
+    @CrossOrigin(origins = "*")
     @GetMapping("/findTerrainPersonneNonValider/{id}")
     public List<V_TerrainPersonne> findTerrainPersonneNonValider(@PathVariable int id){
         return viewTerrainPersonne.findTerrainPersonneNonValider(id);
     }
-
+    @CrossOrigin(origins = "*")
     @GetMapping("/findTerrainPersonneValider/{id}")
     public List<V_TerrainPersonne> findTerrainPersonneValider(@PathVariable int id){
         return viewTerrainPersonne.findTerrainPersonneValider(id);

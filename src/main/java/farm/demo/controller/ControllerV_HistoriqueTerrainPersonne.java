@@ -1,10 +1,7 @@
 package farm.demo.controller;
 
 import farm.demo.terrain.V_HistoriqueTerrainPersonne;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,17 +13,17 @@ public class ControllerV_HistoriqueTerrainPersonne {
     public ControllerV_HistoriqueTerrainPersonne(){
         this.vhistopersonne = new V_HistoriqueTerrainPersonne();
     }
-
+    @CrossOrigin(origins = "*")
     @GetMapping("/findHistoriqueTerrainPersonne")
     public List<V_HistoriqueTerrainPersonne> findHistoriqueTerrainPersonne(){
         return vhistopersonne.findHistoriqueTerrain();
     }
-
+    @CrossOrigin(origins = "*")
     @GetMapping("/findHitoriqueTerrainPersonneByAcheteur/{id}")
     public List<V_HistoriqueTerrainPersonne> findHistoriqueTerrainPersonneByAcheteur(@PathVariable int id){
         return vhistopersonne.findHistoriqueTerrainByIdAcheteur(id);
     }
-
+    @CrossOrigin(origins = "*")
     @GetMapping("/findHistoriqueTerrainPersonneByVendeur/{id}")
     public List<V_HistoriqueTerrainPersonne> finidHistoriqueTerrainPersonneByVendeur(@PathVariable int id){
         return vhistopersonne.findHistoriqueTerrainByIdAcheteur(id);
