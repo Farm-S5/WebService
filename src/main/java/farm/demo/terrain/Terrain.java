@@ -116,22 +116,33 @@ public class Terrain {
         this.etat = etat;
     }
 
-    public void insertTerrain(Terrain t) throws Exception {
+    public int insertTerrain(Terrain t) throws Exception {
+        int generatedId = -1;
         try {
             Connect c = new Connect();
             Connection con = c.conekta();
-            String sql = "insert into Terrain (longitude,latitude,nbParcelle,descriptionterrain,etat) values (?,?,?,?,0)";
-            PreparedStatement psd = con.prepareStatement(sql);
+            String sql = "INSERT INTO Terrain (longitude, latitude, nbParcelle, descriptionterrain, etat) VALUES (?, ?, ?, ?, 0) RETURNING idTerrain";
+            PreparedStatement psd = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             psd.setDouble(1, t.getLongitude());
             psd.setDouble(2, t.getLatitude());
             psd.setInt(3, t.getNbParcelle());
             psd.setString(4, t.getDescriptionTerrain());
-            psd.executeUpdate();
+
+            int affectedRows = psd.executeUpdate();
+
+            if (affectedRows > 0) {
+                ResultSet rs = psd.getGeneratedKeys();
+                if (rs.next()) {
+                    generatedId = rs.getInt(1);
+                }
+            }
             psd.close();
             con.close();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
+            throw ex;
         }
+        return generatedId;
     }
 
     public void changeEtatTerrain(int id) {

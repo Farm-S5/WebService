@@ -13,11 +13,12 @@ public class ControllerTerrain{
     }
     @CrossOrigin(origins = "*")
     @PostMapping("/insertTerrain")
-    public void insertTerrain(@RequestBody Terrain terrain){
-        try{
-            terrain.insertTerrain(terrain);
-        }catch(Exception ex){
+    public int insertTerrain(@RequestBody Terrain terrain) {
+        try {
+            return terrain.insertTerrain(terrain);
+        } catch (Exception ex) {
             ex.printStackTrace();
+            return -1;
         }
     }
     @CrossOrigin(origins = "*")
