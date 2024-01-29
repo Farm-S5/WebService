@@ -18,6 +18,7 @@ public class CultureParcelle extends culture.Culture {
 
     int idCultureParcelle;
     Timestamp datePlantation;
+    Timestamp dateRecolte;
 
     public CultureParcelle(int idCultureParcelle, Timestamp datePlantation, int idCulture, int idParcelle) {
         super(idCulture, idParcelle);
@@ -54,6 +55,14 @@ public class CultureParcelle extends culture.Culture {
 
     public Timestamp getDatePlantation() {
         return datePlantation;
+    }
+
+    public Timestamp getDateRecolte() {
+        return dateRecolte;
+    }
+
+    public void setDateRecolte(Timestamp dateRecolte) {
+        this.dateRecolte = dateRecolte;
     }
 
     public void setIdCultureParcelle(int idCultureParcelle) {
@@ -108,7 +117,7 @@ public class CultureParcelle extends culture.Culture {
             String sql = "insert into HistoriqueCulture (idCultureParcelle,dateRecolte) values (?,?)";
             PreparedStatement psd = con.prepareStatement(sql);
             psd.setInt(1,cp.getIdCultureParcelle());
-            psd.setTimestamp(2,cp.getDatePlantation());
+            psd.setTimestamp(2,cp.getDateRecolte());
             psd.executeUpdate();
             psd.close();
             con.close();
