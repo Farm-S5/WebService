@@ -5,6 +5,8 @@
 package culture;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import connect.*;
 
@@ -12,7 +14,7 @@ import connect.*;
  *
  * @author loick
  */
-public class CultureParcelle extends Culture {
+public class CultureParcelle extends culture.Culture {
 
     int idCultureParcelle;
     Timestamp datePlantation;
@@ -25,6 +27,12 @@ public class CultureParcelle extends Culture {
 
     public CultureParcelle(int idCulture, int idParcelle, Timestamp datePlantation) {
         super(idCulture, idParcelle);
+        this.datePlantation = datePlantation;
+    }
+
+    public CultureParcelle(int idCultureParcelle,int idCulture, int idParcelle,  Timestamp datePlantation) {
+        super(idCulture, idParcelle);
+        this.idCultureParcelle = idCultureParcelle;
         this.datePlantation = datePlantation;
     }
 
@@ -74,6 +82,25 @@ public class CultureParcelle extends Culture {
         }
     }
 
+    public List<CultureParcelle> findCultureParcelle(){
+        List<CultureParcelle> p = new ArrayList<>();
+        try {
+            connect.Connect c = new connect.Connect();
+            Connection con = c.conekta();
+            String sql = "Select * from cultureparcelle";
+            PreparedStatement psd = con.prepareStatement(sql);
+            ResultSet rs = psd.executeQuery();
+            while (rs.next()) {
+                p.add(new CultureParcelle(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getTimestamp(4)));
+            }
+            psd.close();
+            con.close();
+            return p;
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return p;
+    }
     public void insertHistoriqueCulture(CultureParcelle cp) {
         try {
             Connect c = new Connect();

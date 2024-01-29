@@ -20,6 +20,13 @@ public class ControllerCultureParcelle{
             ex.printStackTrace();
         }
     }
+
+    @CrossOrigin("*")
+    @GetMapping("/findCultureParcelle")
+    public List<culture.CultureParcelle> findCultureParcelle(){
+        return cultureparcelle.findCultureParcelle();
+    }
+
     @CrossOrigin(origins = "*")
     @PostMapping("/insertHistoriqueParcelle")
     public void insertHistoriqueCulture(@RequestBody CultureParcelle cp){

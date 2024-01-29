@@ -41,8 +41,9 @@ public class Culture extends Parcelle {
         super(idParcelle);
         this.idCulture = idCulture;
     }
-    
-    
+
+
+
 
     public int getIdCulture() {
         return idCulture;
