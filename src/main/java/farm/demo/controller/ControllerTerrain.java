@@ -59,7 +59,7 @@ public class ControllerTerrain{
     @PostMapping("/updateTerrain")
     public void changeTerrain(@RequestBody terrain.Terrain t){
         try {
-            terrain.changeEtatTerrain(t);
+            terrain.changeDetailTerrain(t);
         }catch (Exception ex){
             ex.getStackTrace();
         }
