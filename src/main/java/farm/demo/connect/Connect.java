@@ -7,9 +7,7 @@ public class Connect
     String mdp;
 
     public Connect()
-    {
-
-    }
+    {}
 
     public Connect(String nom, String mdp)
     {
@@ -44,6 +42,15 @@ public class Connect
             throw e;
         }
         return con;
+    }
+
+    public void endConnection(Connection con) {
+        try{
+            con.close();
+        }catch (Exception ex){
+            ex.getStackTrace();
+        }
+
     }
 
 

@@ -30,6 +30,11 @@ public class Personne {
         this.passUser = passUser;
     }
 
+    public Personne(int idUser, String nameUser) {
+        this.idUser = idUser;
+        this.nameUser = nameUser;
+    }
+
     public Personne(int idUser) {
         this.idUser = idUser;
     }
@@ -64,7 +69,7 @@ public class Personne {
     public int checkPersonne(Personne p) throws Exception {
         int id = 0;
         try {
-            Connect c = new Connect();
+            connect.Connect c = new connect.Connect();
             Connection con = c.conekta();
             String sql = "Select * from personne where nameUser=? and passuser =?";
             PreparedStatement psd = con.prepareStatement(sql);
@@ -76,6 +81,7 @@ public class Personne {
             }
             psd.close();
             con.close();
+            c.endConnection(con);
             return id;
         } catch (Exception ex) {
             System.out.println(ex.getMessage());

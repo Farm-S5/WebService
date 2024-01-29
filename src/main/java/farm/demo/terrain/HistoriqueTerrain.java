@@ -8,12 +8,14 @@ import connect.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import connect.Connect;
 import personne.*;
 /**
  *
  * @author loick
  */
-public class HistoriqueTerrain {
+public class HistoriqueTerrain extends personne.Personne {
     int idHistorique;
     int idAcheteur;
     int idVendeur;
@@ -34,6 +36,8 @@ public class HistoriqueTerrain {
         this.idVendeur = idVendeur;
         this.dateAchat = dateAchat;
     }
+
+
 
     public int getIdHistorique() {
         return idHistorique;
@@ -84,4 +88,6 @@ public class HistoriqueTerrain {
             System.out.println(ex.getMessage());
         }
     }
+
+
 }
