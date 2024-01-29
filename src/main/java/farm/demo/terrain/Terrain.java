@@ -53,6 +53,13 @@ public class Terrain {
         this.latitude = latitude;
     }
 
+    public Terrain(int idTerrain, int nbParcelle, String descriptionTerrain, int etat) {
+        this.idTerrain = idTerrain;
+        this.nbParcelle = nbParcelle;
+        this.descriptionTerrain = descriptionTerrain;
+        this.etat = etat;
+    }
+
     public int getIdTerrain() {
         return idTerrain;
     }
@@ -241,5 +248,23 @@ public class Terrain {
             System.out.println(ex.getMessage());
         }
         return lt;
+    }
+
+    public void changeDetailTerrain(Terrain t){
+        try {
+            Connect c = new Connect();
+            Connection con = c.conekta();
+            String sql = "update Terrain set nbParcelle =? ,descriptionterrain= ? , etat =? where idTerrain=?";
+            PreparedStatement psd = con.prepareStatement(sql);
+            psd.setInt(1, t.getNbParcelle());
+            psd.setString(2, t.getDescriptionTerrain());
+            psd.setInt(3, t.getEtat());
+            psd.setInt(4, t.getIdTerrain());
+            psd.executeUpdate();
+            psd.close();
+            con.close();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 }

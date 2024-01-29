@@ -54,4 +54,14 @@ public class ControllerTerrain{
     public List<Terrain> findTerrainEtat0(){
         return terrain.findTerrainEtat0();
     }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping("/updateTerrain")
+    public void changeTerrain(@RequestBody terrain.Terrain t){
+        try {
+            terrain.changeEtatTerrain(t);
+        }catch (Exception ex){
+            ex.getStackTrace();
+        }
+    }
 }
