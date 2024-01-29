@@ -28,6 +28,10 @@ public class CultureParcelle extends Culture {
         this.datePlantation = datePlantation;
     }
 
+    public CultureParcelle(int idCultureParcelle) {
+        this.idCultureParcelle = idCultureParcelle;
+    }
+
     public CultureParcelle() {
     }
 
