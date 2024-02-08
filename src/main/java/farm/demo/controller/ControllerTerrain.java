@@ -11,7 +11,7 @@ public class ControllerTerrain{
     public ControllerTerrain(){
         this.terrain=new Terrain();
     }
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(   origins = "*")
     @PostMapping("/insertTerrain")
     public int insertTerrain(@RequestBody Terrain terrain) {
         try {

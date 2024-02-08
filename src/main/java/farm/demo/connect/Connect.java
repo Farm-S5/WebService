@@ -1,5 +1,8 @@
 package connect;
 import java.sql.*;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
+import com.mongodb.client.MongoDatabase;
 
 public class Connect
 {
@@ -51,6 +54,14 @@ public class Connect
             ex.getStackTrace();
         }
 
+    }
+
+    public MongoDatabase conektaMongo(){
+        String connect ="mongodb+srv://fatBatman:4743290502Loick@cluster0.ingbqxm.mongodb.net/";
+        String db ="Messagerie";
+        MongoClientURI mu=new MongoClientURI(connect);
+        MongoClient mc = new MongoClient(mu);
+        return mc.getDatabase(db);
     }
 
 
