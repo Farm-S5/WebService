@@ -13,7 +13,7 @@ import java.sql.Timestamp;
 public class ContollerMessagerie {
 
     @CrossOrigin(origins = "*")
-    @PostMapping(value = "/insertMessage", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/insertmessage", produces = MediaType.APPLICATION_JSON_VALUE)
     public String insertMessage(@RequestParam String envoyeur, @RequestParam String receveur, @RequestParam String contenu)
     {
         try{
@@ -25,7 +25,6 @@ public class ContollerMessagerie {
             m.insertMessage(c,nM);
             return "{ \"success\": \"Insertion réussie\" }";
         }
-
         catch (Exception e) {
             e.printStackTrace();
             return "{ \"error\": \"Oups... Quelque chose s'est mal passé\" }";
