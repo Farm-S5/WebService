@@ -12,8 +12,8 @@ import java.sql.Timestamp;
 @RequestMapping("/messagerie")
 public class ContollerMessagerie {
 
-    @CrossOrigin("*")
-    @PostMapping("/insertmessage")
+    @CrossOrigin(origins = "*")
+    @PostMapping(value = "/insertmessage")
     public String insertMessage(@RequestParam String envoyeur, @RequestParam String receveur, @RequestParam String contenu)
     {
         try{
