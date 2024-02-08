@@ -57,14 +57,14 @@ public class ContollerMessagerie {
         }
     }
     @CrossOrigin(origins = "*")
-    @GetMapping(value = "/getMessageRecu", produces = MediaType.APPLICATION_JSON_VALUE)
-    public String getMessageRecu(@RequestParam String envoyeur, @RequestParam String receveur)
+    @GetMapping(value = "/getMessageRecuByPersonne", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String getMessageRecu( @RequestParam String receveur)
     {
         try{
             connect.Connect con = new connect.Connect();
             MongoDatabase c = con.conektaMongo();
             Messagerie m = new Messagerie();
-            Messagerie[] allMessage = m.findConservationUser(c,receveur,envoyeur);
+            Messagerie[] allMessage = m.findConservationPersonne(c,receveur);
             JSONArray jsonArray = new JSONArray();
             for (Messagerie message : allMessage) {
                 JSONObject messageJson = new JSONObject();

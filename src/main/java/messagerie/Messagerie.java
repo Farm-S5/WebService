@@ -103,4 +103,18 @@ public class Messagerie {
 
         return messages.toArray(new Messagerie[0]);
     }
+
+    public Messagerie[] findConservationPersonne(MongoDatabase d,String r) throws Exception
+    {
+        MongoCollection<Document> messagesCollection = d.getCollection("farmgame_message");
+        Document query = new Document("receveur", r);
+        FindIterable<Document> documents = messagesCollection.find(query);
+        List<Messagerie> messages = new ArrayList<>();
+        for (Document document : documents) {
+            Messagerie message = parseDocument(document);
+            messages.add(message);
+        }
+
+        return messages.toArray(new Messagerie[0]);
+    }
 }
