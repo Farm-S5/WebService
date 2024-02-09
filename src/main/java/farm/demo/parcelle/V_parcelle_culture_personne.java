@@ -184,7 +184,7 @@ public class V_parcelle_culture_personne {
         try {
             connect.Connect c = new connect.Connect();
             Connection con = c.conekta();
-            String sql = "SELECT * FROM v_ParcelleCulturePersonne WHERE idUser=? AND idCulture=? AND prixM2 BETWEEN ? AND ? AND superficie BETWEEN ? AND ?";
+            String sql = "SELECT * FROM v_Parcelle_Culture_Personne WHERE idUser=? AND idCulture=? AND prixM2 BETWEEN ? AND ? AND superficie BETWEEN ? AND ?";
             PreparedStatement psd = con.prepareStatement(sql);
             psd.setInt(1,vp.getIdUser());
             psd.setInt(2,vp.getIdCulture());
