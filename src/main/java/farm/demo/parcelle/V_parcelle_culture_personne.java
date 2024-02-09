@@ -189,9 +189,9 @@ public class V_parcelle_culture_personne {
             psd.setInt(1,vp.getIdUser());
             psd.setInt(2,vp.getIdCulture());
             psd.setDouble(3,vp.getPrixM2Min());
-            psd.setDouble(4,vp.getRendementM2Max());
+            psd.setDouble(4,vp.getPrixM2Max());
             psd.setDouble(5,vp.getRendementM2Min());
-            psd.setDouble(6,vp.getPrixM2Min());
+            psd.setDouble(6,vp.getRendementM2Max());
             ResultSet rs = psd.executeQuery();
             while (rs.next()) {
                 p.add(new V_parcelle_culture_personne(rs.getInt(1), rs.getDouble(2), rs.getDouble(3), rs.getInt(4), rs.getString(5),rs.getDouble(6),rs.getDouble(7),rs.getTime(8),rs.getInt(9),rs.getString(10)));
