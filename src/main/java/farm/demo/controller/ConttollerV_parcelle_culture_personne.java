@@ -1,10 +1,7 @@
 package farm.demo.controller;
 
 import farm.demo.parcelle.V_parcelle_culture_personne;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +18,11 @@ public class ConttollerV_parcelle_culture_personne {
     @GetMapping("/findParcelleCulturePersonne")
     public List<V_parcelle_culture_personne> findCulture(){
         return culture.findCulture();
+    }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("/findParcelleCulturePersonneWithParameters")
+    public List<V_parcelle_culture_personne> findCultureWithParameters(@RequestBody V_parcelle_culture_personne cu){
+        return culture.findCulturewithParametre(cu);
     }
 }

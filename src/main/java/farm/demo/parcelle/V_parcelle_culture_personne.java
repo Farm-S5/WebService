@@ -133,4 +133,30 @@ public class V_parcelle_culture_personne {
         }
         return p;
     }
+
+    public List<V_parcelle_culture_personne> findCulturewithParametre(V_parcelle_culture_personne vp) {
+        List<V_parcelle_culture_personne> p = new ArrayList<>();
+        try {
+            connect.Connect c = new connect.Connect();
+            Connection con = c.conekta();
+            String sql = "SELECT * FROM v_ParcelleCulturePersonne WHERE idUser=? AND idCulture=? AND prixM2 BETWEEN ? AND ? AND superficie BETWEEN ? AND ?";
+            PreparedStatement psd = con.prepareStatement(sql);
+            psd.setInt(1,vp.getIdUser());
+            psd.setInt(2,vp.getIdCulture());
+            psd.setDouble(3,vp.getPrixM2());
+            psd.setDouble(4,vp.getPrixM2());
+            psd.setDouble(5,vp.getSuperficie());
+            psd.setDouble(6,vp.getSuperficie());
+            ResultSet rs = psd.executeQuery();
+            while (rs.next()) {
+                p.add(new V_parcelle_culture_personne(rs.getInt(1), rs.getDouble(2), rs.getDouble(3), rs.getInt(4), rs.getString(5),rs.getDouble(6),rs.getDouble(7),rs.getTime(8),rs.getInt(9),rs.getString(10)));
+            }
+            psd.close();
+            con.close();
+            return p;
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return p;
+    }
 }
