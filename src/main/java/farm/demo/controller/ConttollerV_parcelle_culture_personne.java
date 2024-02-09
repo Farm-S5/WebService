@@ -15,7 +15,7 @@ public class ConttollerV_parcelle_culture_personne {
     }
 
     @CrossOrigin(origins = "*")
-    @GetMapping("/findParcelleCulturePersonne")
+    @PostMapping("/findParcelleCulturePersonne")
     public List<V_parcelle_culture_personne> findCulture(){
         return culture.findCulture();
     }
