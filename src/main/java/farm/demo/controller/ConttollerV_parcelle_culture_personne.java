@@ -29,6 +29,6 @@ public class ConttollerV_parcelle_culture_personne {
     @CrossOrigin(origins = "*")
     @PostMapping("/findParcelleCulturePersonneWithParametersById")
     public List<V_parcelle_culture_personne> findCultureWithParametersById(@RequestBody V_parcelle_culture_personne cu){
-        return culture.findCulturewithParametre(cu);
+        return culture.findCulturewithParametreById(cu);
     }
 }
