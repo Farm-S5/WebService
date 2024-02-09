@@ -159,6 +159,10 @@ public class V_parcelle_culture_personne {
         this.prixM2Max = prixM2Max;
     }
 
+    public V_parcelle_culture_personne(int idUser) {
+        this.idUser = idUser;
+    }
+
     public List<V_parcelle_culture_personne> findCulture() {
         List<V_parcelle_culture_personne> p = new ArrayList<>();
         try {
