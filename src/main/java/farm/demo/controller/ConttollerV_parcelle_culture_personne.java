@@ -15,13 +15,13 @@ public class ConttollerV_parcelle_culture_personne {
     }
 
     @CrossOrigin(origins = "*")
-    @PostMapping("/findParcelleCulturePersonne")
+    @GetMapping("/findParcelleCulturePersonne")
     public List<V_parcelle_culture_personne> findCulture(){
         return culture.findCulture();
     }
 
     @CrossOrigin(origins = "*")
-    @GetMapping("/findParcelleCulturePersonneWithParameters")
+    @PostMapping("/findParcelleCulturePersonneWithParameters")
     public List<V_parcelle_culture_personne> findCultureWithParameters(@RequestBody V_parcelle_culture_personne cu){
         return culture.findCulturewithParametre(cu);
     }
