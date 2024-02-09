@@ -23,7 +23,7 @@ public class ContollerMessagerie {
             Timestamp t = m.getNow();
             Messagerie nM = new Messagerie(envoyeur,receveur,contenu,t);
             m.insertMessage(c,nM);
-            return "{ \"success\": \"Insertion réussie\" }";
+            return "{ \"success\": \"Message envoyé\" }";
         }
         catch (Exception e) {
             e.printStackTrace();
