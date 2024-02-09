@@ -25,4 +25,10 @@ public class ConttollerV_parcelle_culture_personne {
     public List<V_parcelle_culture_personne> findCultureWithParameters(@RequestBody V_parcelle_culture_personne cu){
         return culture.findCulturewithParametre(cu);
     }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping("/findParcelleCulturePersonneWithParametersById")
+    public List<V_parcelle_culture_personne> findCultureWithParametersById(@RequestBody V_parcelle_culture_personne cu){
+        return culture.findCulturewithParametre(cu);
+    }
 }

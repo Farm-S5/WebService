@@ -204,4 +204,26 @@ public class V_parcelle_culture_personne {
         }
         return p;
     }
+
+    public List<V_parcelle_culture_personne> findCulturewithParametreById(V_parcelle_culture_personne vp) {
+        List<V_parcelle_culture_personne> p = new ArrayList<>();
+        try {
+            connect.Connect c = new connect.Connect();
+            Connection con = c.conekta();
+            String sql = "SELECT * FROM v_Parcelle_Culture_Personne WHERE idUser=?";
+            PreparedStatement psd = con.prepareStatement(sql);
+            psd.setInt(1,vp.getIdUser());
+            ResultSet rs = psd.executeQuery();
+            while (rs.next()) {
+                p.add(new V_parcelle_culture_personne(rs.getInt(1), rs.getDouble(2), rs.getDouble(3), rs.getInt(4), rs.getString(5),rs.getDouble(6),rs.getDouble(7),rs.getTime(8),rs.getInt(9),rs.getString(10)));
+            }
+            psd.close();
+            con.close();
+            return p;
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return p;
+    }
+
 }
