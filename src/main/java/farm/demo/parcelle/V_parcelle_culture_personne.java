@@ -54,22 +54,6 @@ public class V_parcelle_culture_personne {
         this.prixM2Max = prixM2Max;
     }
 
-    public V_parcelle_culture_personne() {
-    }
-
-    public V_parcelle_culture_personne(int idParcelle, double rendement, double superficie, int idCulture, String nomCulture, double rendementM2, double prixM2, Time duration, int idUser, String nomUser) {
-        this.idParcelle = idParcelle;
-        this.rendement = rendement;
-        this.superficie = superficie;
-        this.idCulture = idCulture;
-        this.nomCulture = nomCulture;
-        this.rendementM2 = rendementM2;
-        this.prixM2 = prixM2;
-        this.duration = duration;
-        this.idUser = idUser;
-        this.nomUser = nomUser;
-    }
-
     public int getIdParcelle() {
         return idParcelle;
     }
@@ -148,6 +132,31 @@ public class V_parcelle_culture_personne {
 
     public void setNomUser(String nomUser) {
         this.nomUser = nomUser;
+    }
+
+    public V_parcelle_culture_personne() {
+    }
+
+    public V_parcelle_culture_personne(int idParcelle, double rendement, double superficie, int idCulture, String nomCulture, double rendementM2, double prixM2, Time duration, int idUser, String nomUser) {
+        this.idParcelle = idParcelle;
+        this.rendement = rendement;
+        this.superficie = superficie;
+        this.idCulture = idCulture;
+        this.nomCulture = nomCulture;
+        this.rendementM2 = rendementM2;
+        this.prixM2 = prixM2;
+        this.duration = duration;
+        this.idUser = idUser;
+        this.nomUser = nomUser;
+    }
+
+    public V_parcelle_culture_personne(int idParcelle, int idCulture, double rendementM2Min, double rendementM2Max, double prixM2Min, double prixM2Max) {
+        this.idParcelle = idParcelle;
+        this.idCulture = idCulture;
+        this.rendementM2Min = rendementM2Min;
+        this.rendementM2Max = rendementM2Max;
+        this.prixM2Min = prixM2Min;
+        this.prixM2Max = prixM2Max;
     }
 
     public List<V_parcelle_culture_personne> findCulture() {
